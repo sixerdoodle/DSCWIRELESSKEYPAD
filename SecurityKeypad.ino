@@ -83,7 +83,7 @@ item_t KeyTable[] = {
     { NULL, 0 }
 };
   
-TCPServer MyTCP_Server = TCPServer(nnnn);  // configure port number
+TCPServer MyTCP_Server = TCPServer(nnnn);  // configure TCP port number (referenced in the .php file
 TCPClient MyTCP_Client;
 
 SYSTEM_THREAD(ENABLED);
@@ -206,7 +206,7 @@ void loop() {
         MyTCP_Client = MyTCP_Server.available();  // if no client is yet connected, check for a new connection
     }
     
-    if(currentTime > TCPPing){ System.reset();}
+    //if(currentTime > TCPPing){ System.reset();}
     
     //
     // roughly go through this section of code every 50ms, so 200x through
